@@ -1,9 +1,6 @@
-black
-flake8
+Flask==2.3.2
+gunicorn==20.1.0
 flask-debugtoolbar
-flask-shell-ipython
-ipdb
-ipython
+black
 isort
 pytest
-pytest-flask
