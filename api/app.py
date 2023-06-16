@@ -1,6 +1,6 @@
 from flask import Flask, Response, jsonify, request
 from .errors import errors
-from .functions import makeDict 
+from .functions import makeDict, makeArray 
 
 app = Flask(__name__)
 app.register_blueprint(errors)
@@ -16,6 +16,11 @@ def vowel_count():
     dict_vowel_count = makeDict(payload)
     return dict_vowel_count
 
+@app.route("/sort", methods=["POST"])
+def sort():
+    payload = request.get_json()
+    dict_vowel_count = makeArray(payload)
+    return dict_vowel_count
 
 @app.route("/health")
 def health():
