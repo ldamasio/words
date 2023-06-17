@@ -1,14 +1,14 @@
-from flask import Flask, Response, jsonify, request
+from flask import Flask, Response, request, render_template
 from .errors import errors
 from .functions import makeDict, makeArray 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='static')
 app.register_blueprint(errors)
+
 
 @app.route("/")
 def index():
     return Response("Hello, world, word3!", status=200)
-
 
 @app.route("/vowel_count", methods=["POST"])
 def vowel_count():
@@ -25,3 +25,9 @@ def sort():
 @app.route("/health")
 def health():
     return Response("OK", status=200)
+
+@app.route("/docs")
+def get_docs():
+    print('sending docs')
+    return render_template('swaggerui.html')
+
