@@ -22,7 +22,7 @@ def makeArray(payload):
             if payload['order'] == 'desc':
                 order = 'desc'
             # check order status
-            if order == asc:
+            if order == 'asc':
                 payload['words'].sort()
             else:
                 payload['words'].sort(reverse=True)
