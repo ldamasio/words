@@ -8,7 +8,7 @@
   "servers": [
     {
       "url": "http://localhost:5000",
-      "description": "This is a dummy value describing the base URL for the API."
+      "description": "Pilar Words API"
     }
   ],
   "paths": {
@@ -39,7 +39,7 @@
       }
     },
     "/vowel_count": {
-      "get": {
+      "post": {
         "summary": "Used to count and add the total vowels in each of the words.",
         "description": "Optional extended description in CommonMark or HTML.",
         "responses": {
@@ -65,7 +65,7 @@
       }
     },
     "/sort": {
-      "get": {
+      "post": {
         "summary": "Used to sort a list of words.",
         "description": "Optional extended description in CommonMark or HTML.",
         "responses": {

@@ -8,7 +8,7 @@ app.register_blueprint(errors)
 
 @app.route("/")
 def index():
-    return Response("Hello, world, word3!", status=200)
+    return Response("Consulte a rota /docs para documentação e rota /health para simples ping de monitoramento da API", status=200)
 
 @app.route("/vowel_count", methods=["POST"])
 def vowel_count():
