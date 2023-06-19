@@ -1,12 +1,12 @@
-# words3
+# words
 
-## Words3 é um programa para backend em Python.
+## Words é um programa para backend em Python.
 
-Words3 usa o Flask para facilitar a implementação da API na linguagem Python.
+Words usa o Flask para facilitar a implementação da API na linguagem Python.
 
 Por razões de segurança, faz uso de uma Interface de Porta de Entrada do Servidor Web (WSGI).
 
-Enfim, o Words3 é uma API com as seguintes rotas:
+Enfim, o Words é uma API com as seguintes rotas:
 
 ## Rotas da API
 
