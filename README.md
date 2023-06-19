@@ -21,3 +21,15 @@ Resposta: ["batman", "coringa", "robin"]
 Requisição: {"words": ["batman", "robin", "coringa"], "order": "desc"}
 Resposta: ["robin", "coringa", "batman"]
 
+## Validações da API e menssagens de erro
+
+Exemplos de requisições inválidas:
+
+Sem application/json no content-type: 
+> Oops, got an error! 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+Requisição não utiliza método POST: 
+> Oops, got an error! 405 Method Not Allowed: The method is not allowed for the requested URL.
+
+Rotas inexistentes:
+> Oops, got an error! 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
