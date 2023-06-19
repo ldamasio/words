@@ -25,7 +25,7 @@ Resposta: ["robin", "coringa", "batman"]
 
 Exemplos de requisições inválidas:
 
-Sem application/json no content-type: 
+Caso o requisitante envie a requisição sem o atributo application/json no "content-type": 
 > Oops, got an error! 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
 
 Requisição não utiliza método POST: 
