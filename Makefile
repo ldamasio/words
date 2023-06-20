@@ -22,5 +22,5 @@ lint:
 	@find . -name '*.py' -exec pylint {} \;
 
 test:
-	@pytest -v tests
+	@pytest -v --cov
 
