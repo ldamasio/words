@@ -1,7 +1,8 @@
 Flask==2.3.2
 gunicorn==20.1.0
-flask-debugtoolbar
 black
 isort
 pytest
+pytest-flask
+pytest-cov
 pylint
