@@ -11,16 +11,26 @@
       "description": "Pilar Words API"
     }
   ],
+  "components": {
+    "schemas": {
+      "Words": {
+        "properties": {
+          "words": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  },
   "paths": {
     "/": {
       "get": {
-        "summary": "Returns the default response from the API.",
-        "description": "Optional extended description in CommonMark or HTML.",
+        "summary": "Returns a response from the API.",
         "responses": {
           "200": {
             "description": "The default response.",
             "content": {
-              "application/json": {
+              "\ttext/html; charset=utf-8": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -28,9 +38,7 @@
                       "type": "string"
                     }
                   },
-                  "example": {
-                    "message": "Hello World"
-                  }
+                  "example": "Consulte a rota /docs para documentação e rota /health para simples ping de monitoramento da API"
                 }
               }
             }
@@ -41,21 +49,43 @@
     "/vowel_count": {
       "post": {
         "summary": "Used to count and add the total vowels in each of the words.",
-        "description": "Optional extended description in CommonMark or HTML.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Words"
+              },
+              "examples": {
+                "AscOrder": {
+                  "value": {
+                    "words": [
+                      "batman",
+                      "robin",
+                      "coringa"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "The default response.",
+            "description": "successful operation",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string"
+                  "$ref": "#/components/schemas/Words"
+                },
+                "examples": {
+                  "AscOrder": {
+                    "value": {
+                      "words": {
+                        "batman": "2",
+                        "robin": "2",
+                        "coringa": "3"
+                      }
                     }
-                  },
-                  "example": {
-                    "message": "OK"
                   }
                 }
               }
@@ -68,20 +98,63 @@
       "post": {
         "summary": "Used to sort a list of words.",
         "description": "Optional extended description in CommonMark or HTML.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Words"
+              },
+              "examples": {
+                "AscOrder": {
+                  "value": {
+                    "words": [
+                      "batman",
+                      "robin",
+                      "coringa"
+                    ],
+                    "order": "asc"
+                  }
+                },
+                "DescOrder": {
+                  "value": {
+                    "words": [
+                      "batman",
+                      "robin",
+                      "coringa"
+                    ],
+                    "order": "desc"
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "The default response.",
+            "description": "successful operation",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string"
+                  "$ref": "#/components/schemas/Words"
+                },
+                "examples": {
+                  "AscOrder": {
+                    "value": {
+                      "words": [
+                        "batman",
+                        "coringa",
+                        "robin"
+                      ]
                     }
                   },
-                  "example": {
-                    "message": "OK"
+                  "DescOrder": {
+                    "value": {
+                      "words": [
+                        "robin",
+                        "coringa",
+                        "batman"
+                      ]
+                    }
                   }
                 }
               }

@@ -23,16 +23,17 @@ Resposta: ["robin", "coringa", "batman"]
 
 ## Validações da API e menssagens de erro
 
-Exemplos de requisições inválidas:
+Exemplos de requisições inválidas e respectivas respostas:
 
-Caso o requisitante envie a requisição sem o atributo application/json no "content-type": 
-> Oops, got an error! 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+Caso o requisitante envie a requisição sem o atributo application/json no "content-type":
+
+> Method must be POST! 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
 
 Requisição não utiliza método POST: 
-> Oops, got an error! 405 Method Not Allowed: The method is not allowed for the requested URL.
+> Method must be POST! 405 Method Not Allowed: The method is not allowed for the requested URL.
 
 Rotas inexistentes:
-> Oops, got an error! 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+> Inexistent route! 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
 
 ## Deployment e Online Demo
 

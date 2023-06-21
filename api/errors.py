@@ -2,6 +2,14 @@ from flask import Blueprint, Response
 
 errors = Blueprint("errors", __name__)
 
+@errors.app_errorhandler(400)
+def server_error(error):
+    return Response(f"Bad Request! {error}", status=400)
+
+@errors.app_errorhandler(415)
+def server_error(error):
+    return Response(f"Method must be POST! {error}", status=415)
+
 @errors.app_errorhandler(405)
 def server_error(error):
     return Response(f"Method must be POST! {error}", status=405)

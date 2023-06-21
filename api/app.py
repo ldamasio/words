@@ -34,5 +34,4 @@ def health():
 
 @app.route("/docs")
 def get_docs():
-    print('sending docs')
     return render_template('swaggerui.html')
