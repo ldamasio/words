@@ -55,16 +55,12 @@
               "schema": {
                 "$ref": "#/components/schemas/Words"
               },
-              "examples": {
-                "AscOrder": {
-                  "value": {
-                    "words": [
-                      "batman",
-                      "robin",
-                      "coringa"
-                    ]
-                  }
-                }
+              "example": {
+                "words": [
+                  "batman",
+                  "robin",
+                  "coringa"
+                ]
               }
             }
           }
@@ -77,15 +73,11 @@
                 "schema": {
                   "$ref": "#/components/schemas/Words"
                 },
-                "examples": {
-                  "AscOrder": {
-                    "value": {
-                      "words": {
-                        "batman": "2",
-                        "robin": "2",
-                        "coringa": "3"
-                      }
-                    }
+                "example": {
+                  "words": {
+                    "batman": "2",
+                    "robin": "2",
+                    "coringa": "3"
                   }
                 }
               }
