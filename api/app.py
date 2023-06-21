@@ -1,10 +1,14 @@
 from flask import Flask, Response, request, render_template
 from .errors import errors
 from .functions import makeDict, makeArray 
+import json
 
 app = Flask(__name__, template_folder='static')
 app.register_blueprint(errors)
 
+class JsonResponse(Response):
+    def __init__(self, json_dict, status=200):
+        super().__init__(response=json.dumps(json_dict), status=status, mimetype="application/json")
 
 @app.route("/")
 def index():
@@ -14,13 +18,13 @@ def index():
 def vowel_count():
     payload = request.get_json()
     dict_vowel_count = makeDict(payload)
-    return dict_vowel_count
+    return JsonResponse(dict_vowel_count)
 
 @app.route("/sort", methods=["POST"])
 def sort():
     payload = request.get_json()
     dict_vowel_count = makeArray(payload)
-    return dict_vowel_count
+    return JsonResponse(dict_vowel_count)
 
 @app.route("/health")
 def health():
