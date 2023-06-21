@@ -8,11 +8,13 @@ app.register_blueprint(errors)
 
 class JsonResponse(Response):
     def __init__(self, json_dict, status=200):
-        super().__init__(response=json.dumps(json_dict), status=status, mimetype="application/json")
+        super().__init__(response=json.dumps(json_dict), status=status, \
+                         mimetype="application/json")
 
 @app.route("/")
 def index():
-    return Response("Consulte a rota /docs para documentação e rota /health para simples ping de monitoramento da API", status=200)
+    return Response("""Consulte a rota /docs para documentação e rota /health 
+                    para simples ping de monitoramento da API""", status=200)
 
 @app.route("/vowel_count", methods=["POST"])
 def vowel_count():
